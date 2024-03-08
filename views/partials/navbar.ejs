@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UN Countries</title>
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body tabindex="-1">
+  <div class="navbar bg-base-100">
+    <div class="flex-1">
+      <a class="btn btn-ghost normal-case text-xl <%= (page == "/un/countries") ? 'active' : '' %>" href="/un/countries">All Countries</a>
+      <a class="btn btn-ghost normal-case text-xl <%= (page == "/about") ? 'active' : '' %>" href="/about">About</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <label tabindex="0" class="btn btn-ghost sm:hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </label>
+    <ul tabindex="0" class="menu menu-sm dropdown-content right-0 mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+      <li><a class="<%= (page == '/about') ? 'active' : '' %>" href="/about">About</a></li>
+      <li>
+        <details>
+          <summary>
+            Region
+          </summary>
+          <ul class="p-2 bg-base-100">
+            <li><a class="<%= (page == '/un/countries?region=Africa') ? 'active' : '' %>" href="/un/countries?region=Africa">Africa</a></li>
+            <li><a class="<%= (page == '/un/countries?region=Americas') ? 'active' : '' %>" href="/un/countries?region=Americas">Americas</a></li>
+            <li><a class="<%= (page == '/un/countries?region=Asia') ? 'active' : '' %>" href="/un/countries?region=Asia">Asia</a></li>
+            <li><a class="<%= (page == '/un/countries?region=Europe') ? 'active' : '' %>" href="/un/countries?region=Europe">Europe</a></li>
+            <li><a class="<%= (page == '/un/countries?region=Oceania') ? 'active' : '' %>" href="/un/countries?region=Oceania">Oceania</a></li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </div>
+  <br />
+
+</body>
+
+</html>

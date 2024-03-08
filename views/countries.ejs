@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UN Countries</title>
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body tabindex="-1">
+    <% include('partials/navbar', {page: '/un/countries'}) %>
+
+    <div class="container mx-auto">
+        <div class="hero bg-base-200 rounded-lg p-6">
+            <div class="hero-content text-center ">
+                <div class="max-w-md">
+                    <h1 class="text-5xl font-bold">Countries</h1>
+
+                    <table class="table-auto">
+                        <thead>
+                            <tr>
+                                <th>Flag</th>
+                                <th>Name</th>
+                                <th>Region</th>
+                                <th>Population</th>
+                                <th>Capital</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% countries.forEach(country => { %>
+                            <tr>
+                                <td><img src="<%= country.flag %>" alt="<%= country.name %> Flag"></td>
+                                <td><%= country.name %></td>
+                                <td><a href="/un/countries?region=<%= country.region.name %>"><%= country.region.name %></a></td>
+                                <td><%= country.population %></td>
+                                <td><%= country.capital %></td>
+                                <!-- Correcting the anchor tag to link to the country details page -->
+                                <td><a href="/un/countries/<%= country.a2code %>">Details</a></td>
+                            </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+        <br />
+
+    </div>
+</body>
+
+</html>
